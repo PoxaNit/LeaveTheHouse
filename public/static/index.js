@@ -1,5 +1,5 @@
-alert("js loaded!")
-/*import ws from "../frontend/js/ws/ws.js";
+import ws from "../frontend/js/ws/ws.js";
+
 const gameArea = {
   canvas: document.createElement("canvas"),
   start: function () {
@@ -24,4 +24,3 @@ ws.send(JSON.stringify({
     y: 50
   }
 }));
-*/

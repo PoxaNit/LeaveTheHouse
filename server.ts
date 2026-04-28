@@ -5,9 +5,13 @@ const ws = require("ws");
 const fs = require("fs");
 const eventHandler = require("./eventHandler.ts").default;
 
+app.use(express.static("./public"));
+
+
+/*
 app.get("/", (req, res) => {
 
-    fs.readFile("public/index.html", "utf8", (error, data) => {
+    fs.readFile("public/static/index.html", "utf8", (error, data) => {
 
         if (error) throw error;
 
@@ -16,6 +20,30 @@ app.get("/", (req, res) => {
     });
 
 });
+app.get("/index.js", (req, res) => {
+
+    fs.readFile("public/index.js", "utf8", (error, data) => {
+
+        if (error) throw error;
+
+        res.send(data);
+
+    });
+
+});
+
+app.get("/index.css", (req, res) => {
+
+    fs.readFile("public/index.css", "utf8", (error, data) => {
+
+        if (error) throw error;
+
+        res.send(data);
+
+    });
+
+});
+*/
 
 const wss = new ws.WebSocketServer({
   port: process.env.ws_port,
