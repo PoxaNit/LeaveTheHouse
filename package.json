@@ -1,0 +1,23 @@
+{
+  "name": "leavethehouse",
+  "version": "1.0.0",
+  "description": "A web game",
+  "keywords": [
+    "leavethehouse"
+  ],
+  "license": "ISC",
+  "author": "Júlio César",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "ws": "^8.20.0"
+  },
+  "devDependencies": {
+    "tsx": "^4.21.0"
+  }
+}
