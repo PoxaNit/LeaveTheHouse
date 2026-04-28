@@ -28,10 +28,10 @@ wss.on("connection", ws => {
 
     ws.on("message", data => {
 
-        console.log(`message: ${data}`);
+        console.log('message: ', "" + data);
 
 	const response = eventHandler(JSON.parse(data));
-
+console.log("response to client: ", response)
 	wss.clients.forEach(client => {
 
 	    client.send(JSON.stringify(response));
@@ -44,4 +44,4 @@ wss.on("connection", ws => {
 
 app.listen(process.env.http_port, () => console.log(`Server running on port ${process.env.http_port}`));
 
-export wss;
+export {wss};
