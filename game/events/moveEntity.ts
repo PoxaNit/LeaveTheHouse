@@ -1,5 +1,3 @@
-const wss = require("../server.ts");
-
 interface MoveEntity {
     entity_id: number;
     x: number;
