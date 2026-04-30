@@ -1,3 +1,5 @@
+const gameState = require("../state/gameState/gameState.ts").default;
+
 interface SpawnEntity {
   entity_id: number;
   x: number;
@@ -6,7 +8,9 @@ interface SpawnEntity {
 
 function spawnEntity (payload: SpawnEntity) {
 
-    return {event: "spawnedEntity", payload: payload};
+    gameState.entities["" + payload.entity_id] = payload;
+
+    return {event: "updatedGameState", payload: gameState};
 
 }
 

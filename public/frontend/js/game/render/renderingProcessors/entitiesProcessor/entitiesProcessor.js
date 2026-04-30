@@ -3,13 +3,15 @@ import gameArea from "../../../gameArea/gameArea.js";
 
 function entitiesProcessor() {
 
-    for (const entity in gameState.entities) {
+    const ctx = gameArea.context;
 
-	const ctx = gameArea.canvas.context;
+    for (const id in gameState.entities) {
 
-	ctx.fillRect(entity.x, entity.y, 40, 20);
+	const entity = gameState.entities[id];
 
 	ctx.fillStyle = "red";
+
+	ctx.fillRect(entity.x, entity.y, 40, 20);
 
     }
 

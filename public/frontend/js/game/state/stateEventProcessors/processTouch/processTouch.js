@@ -17,11 +17,29 @@ function sendData (event) {
 
 function processTouch () {
 
-    if (inputState.touch.start) sendData("touchstart");
+    if (inputState.touch.start) {
 
-    if (inputState.touch.move) sendData("touchmove");
+	sendData("touchstart");
 
-    if (inputState.touch.end) sendData("touchend");
+	inputState.touch.start = false;
+
+    }
+
+    if (inputState.touch.move) {
+
+	sendData("touchmove");
+
+	inputState.touch.move = false;
+
+    }
+
+    if (inputState.touch.end) {
+
+	sendData("touchend");
+
+	inputState.touch.end = false;
+
+    }
 
 }
 

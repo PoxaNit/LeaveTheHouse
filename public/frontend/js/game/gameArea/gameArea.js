@@ -10,6 +10,7 @@ const gameArea = {
 };
 
 async function startGameArea () {
+
     await gameArea.start();
 
     gameArea.canvas.style.backgroundColor = "blue";
