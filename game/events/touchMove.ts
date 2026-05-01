@@ -10,7 +10,12 @@ function touchStart (payload: TouchStart) {
 
     gameState.entities["" + payload.entity_id] = payload;
 
-    return {event: "updatedGameState", payload: gameState};
+    return [
+      {
+	scope: "public",
+	data: {event: "updatedGameState", payload: gameState}
+      }
+    ];
 
 }
 

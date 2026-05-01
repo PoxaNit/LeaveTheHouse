@@ -7,7 +7,7 @@ function render() {
 
     ctx.clearRect(0, 0, gameArea.canvas.width, gameArea.canvas.height);
 
-    let a = entitiesProcessor();
+    entitiesProcessor();
 
 }
 

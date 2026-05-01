@@ -15,7 +15,7 @@ ws.addEventListener("open", () => {
 	inputState.touch.activeEvent = true;
 	inputState.touch.start = true;
 	inputState.touch.x = clientX;
-	inputState.touch.start = clientY;
+	inputState.touch.y = clientY;
 
     });
 
@@ -27,7 +27,7 @@ ws.addEventListener("open", () => {
 	inputState.touch.activeEvent = true;
 	inputState.touch.move = true;
 	inputState.touch.x = clientX;
-	inputState.touch.start = clientY;
+	inputState.touch.y = clientY;
 
     });
 

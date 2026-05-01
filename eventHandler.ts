@@ -2,6 +2,8 @@ const moveEntity = require("./game/events/moveEntity.ts").default;
 const spawnEntity = require("./game/events/spawnEntity.ts").default;
 const despawnEntity = require("./game/events/despawnEntity.ts").default;
 const touchStart = require("./game/events/touchStart.ts").default;
+const touchMove = require("./game/events/touchMove.ts").default;
+const touchEnd = require("./game/events/touchEnd.ts").default;
 
 interface Message {
     event: string;
@@ -32,6 +34,15 @@ function eventHandler (message: Message) {
 	case "touchstart":
 	    return touchStart(payload);
 	    break;
+
+	case "touchmove":
+	    return touchMove(payload);
+	    break;
+
+	case "touchend":
+	    return touchEnd(payload);
+	    break;
+
 
 	default: return {event: "event_error", payload: null};
 	    break;

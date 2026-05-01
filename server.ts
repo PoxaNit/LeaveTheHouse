@@ -56,15 +56,29 @@ wss.on("connection", ws => {
 
     ws.on("message", data => {
 
-        console.log('message: ', "" + data);
+        console.log("message: " + data);
 
-	const response = eventHandler(JSON.parse(data));
-console.log("response to client: ", response)
-	wss.clients.forEach(client => {
+	const messages = eventHandler(JSON.parse(data));
+console.log("response to client: ", messages)
 
-	    client.send(JSON.stringify(response));
+	for (const message of messages) {
 
-        });
+	    if (message.scope === "private") {
+
+	        ws.send(JSON.stringify(message.data));
+
+	    }
+
+	     if (message.scope === "public") {
+
+	         wss.clients.forEach(client => {
+
+	            client.send(JSON.stringify(message.data));
+
+                 });
+	    }
+
+	}
 
     });
 

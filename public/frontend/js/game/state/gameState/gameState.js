@@ -1,5 +1,5 @@
 const gameState = {
-  thisPlayerId: 0,
+  thisPlayerId: null,
   entities: {}
 };
 

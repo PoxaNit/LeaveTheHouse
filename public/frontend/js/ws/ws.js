@@ -12,8 +12,6 @@ ws.addEventListener("close", e => {
 
 ws.addEventListener("message", e => {
 
-    alert("server says: " + e.data);
-
     eventHandler(JSON.parse(e.data));
 
 });
