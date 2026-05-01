@@ -1,6 +1,6 @@
-import inputState from "../../inputState.js";
-import gameState from "../../../gameState/gameState.js";
-import ws from "../../../../../ws/ws.js";
+import inputState from "../../inputState/inputState.js";
+import gameState from "../../gameState/gameState.js";
+import ws from "../../../../ws/ws.js";
 
 function sendData (event) {
 

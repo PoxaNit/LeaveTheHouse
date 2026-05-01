@@ -1,5 +1,5 @@
 import gameState from "../../../state/gameState/gameState.js";
-import gameArea from "../../../gameArea/gameArea.js";
+import {gameArea} from "../../../gameArea/gameArea.js";
 
 function entitiesProcessor() {
 
