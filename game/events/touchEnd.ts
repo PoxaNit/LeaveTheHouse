@@ -1,15 +1,18 @@
 let gameState = require("../state/gameState/gameState.ts").default;
+const {CollisionSystem} = require("../systems/collisionSystem/collisionSystem.ts");
 
-interface TouchStart {
-  entity_id: number,
-  x: number,
-  y: number
+interface TouchEnd {
+  entity_id: number;
 };
 
-function touchStart (payload: TouchStart) {
+function touchEnd (payload: TouchEnd) {
+/*
+    let futureGameState = gameState.entities;
 
-    gameState.entities["" + payload.entity_id] = payload;
+    futureGameState.entities["" + payload.entity_id] = payload;
 
+    CollisionSystem.update(futureGameState);
+*/
     return [
       {
 	scope: "public",
@@ -19,4 +22,4 @@ function touchStart (payload: TouchStart) {
 
 }
 
-export default touchStart;
+export default touchEnd;

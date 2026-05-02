@@ -41,9 +41,10 @@ ws.addEventListener("open", () => {
     ws.send(JSON.stringify({
       event: "spawnEntity",
        payload: {
-        entity_id: Math.floor(Math.random() * 55000),
-        x: 0,
-        y: 0
+        x: 50,
+        y: 50,
+	width: 30,
+	height: 40
       }
     }));
 

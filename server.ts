@@ -59,7 +59,6 @@ wss.on("connection", ws => {
         console.log("message: " + data);
 
 	const messages = eventHandler(JSON.parse(data));
-console.log("response to client: ", messages)
 
 	for (const message of messages) {
 
@@ -70,7 +69,7 @@ console.log("response to client: ", messages)
 	    }
 
 	     if (message.scope === "public") {
-
+console.log("public message: ", JSON.stringify(message.data))
 	         wss.clients.forEach(client => {
 
 	            client.send(JSON.stringify(message.data));
