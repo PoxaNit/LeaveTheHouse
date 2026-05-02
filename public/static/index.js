@@ -16,7 +16,7 @@ ws.addEventListener("open", () => {
 	inputState.touch.start = true;
 	inputState.touch.x = clientX;
 	inputState.touch.y = clientY;
-
+console.log(`index.js, x y: ${clientX} ${clientY}`)
     });
 
     gameArea.canvas.addEventListener("touchmove", e => {

@@ -9,8 +9,8 @@ interface TouchStart {
 
 function touchStart (payload: TouchStart) {
 
-    let futureEntitiesState = gameState.entities;
-
+    let futureEntitiesState = structuredClone(gameState.entities);
+console.log("gameState.entities before modifying futureEntitiesState: ", gameState.entities)
     futureEntitiesState["" + payload.entity_id] = {
       entity_id: payload.entity_id,
       x: payload.x,

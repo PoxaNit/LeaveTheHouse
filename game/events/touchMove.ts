@@ -9,7 +9,7 @@ interface TouchMove {
 
 function touchMove (payload: TouchMove) {
 
-    let futureEntitiesState = gameState.entities;
+    let futureEntitiesState = structuredClone(gameState.entities);
 
     futureEntitiesState["" + payload.entity_id] = {
       entity_id: payload.entity_id,
