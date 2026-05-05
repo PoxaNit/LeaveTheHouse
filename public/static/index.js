@@ -44,7 +44,8 @@ console.log(`index.js, x y: ${clientX} ${clientY}`)
         x: 50,
         y: 50,
 	width: 30,
-	height: 40
+	height: 40,
+	speed: 5
       }
     }));
 

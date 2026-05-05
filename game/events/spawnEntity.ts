@@ -5,6 +5,7 @@ interface SpawnEntity {
   y: number;
   width: number;
   height: number;
+  speed: number;
 }
 
 function spawnEntity (payload: SpawnEntity) {
@@ -16,7 +17,8 @@ console.log("spanwEntity function, payload: ", payload)
       x: payload.x,
       y: payload.y,
       width: payload.width,
-      height: payload.height
+      height: payload.height,
+      speed: payload.speed
     };
 console.log("spanwEntity function, gameState: ", gameState)
 
