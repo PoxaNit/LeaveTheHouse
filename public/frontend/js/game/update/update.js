@@ -5,6 +5,8 @@ function update () {
 
     if (inputState.touch.activeEvent) processTouch();
 
+    if (inputState.walking.activeEvent) ;
+
 }
 
 export default update;

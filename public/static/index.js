@@ -2,11 +2,14 @@ import ws from "../frontend/js/ws/ws.js";
 import {gameArea, startGameArea} from "../frontend/js/game/gameArea/gameArea.js";
 import gameLoop from "../frontend/js/game/gameLoop/gameLoop.js";
 import inputState from "../frontend/js/game/state/inputState/inputState.js";
+import controlArea from "../frontend/js/game/controlArea/controlArea.js";
 
 ws.addEventListener("open", () => {
 
     startGameArea();
 
+    controlArea();
+/*
     gameArea.canvas.addEventListener("touchstart", e => {
 
 	const clientX = e.touches[0].clientX;
@@ -36,7 +39,7 @@ console.log(`index.js, x y: ${clientX} ${clientY}`)
 	inputState.touch.activeEvent = false;
 
     });
-
+*/
 
     ws.send(JSON.stringify({
       event: "spawnEntity",

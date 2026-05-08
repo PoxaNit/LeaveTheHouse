@@ -44,7 +44,13 @@ function eventHandler (message: Message) {
 	    break;
 
 
-	default: return {event: "event_error", payload: null};
+	default:
+	     return [
+	      {
+	        scope: "private",
+	        data: {event: "event_error", payload: null}
+	      }
+	    ];
 	    break;
     }
 

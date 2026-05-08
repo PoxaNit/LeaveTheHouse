@@ -6,6 +6,13 @@ const inputState = {
     end: false,
     x: 0,
     y: 0
+  },
+  walking: {
+    activeEvent: false,
+    up: false,
+    right: false,
+    down: false,
+    left: false,
   }
 };
 
