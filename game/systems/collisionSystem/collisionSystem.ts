@@ -1,6 +1,5 @@
 const gameState = require("../../state/gameState/gameState.ts").default;
 const {DynamicEntity} = require("../../entities/dynamicEntity/dynamicEntity.ts");
-const wss = require("../../../server.ts");
 
 export interface ColSys {
   detectCollisions: object;
@@ -85,13 +84,6 @@ console.log("collision not detected!")
 
 		gameState.entities[entity_id] = futureEntitiesState[entity_id];
 
-	        wss.clients.forEach(client => {
-		    client.send(JSON.stringify({
-		      event: "updatedGameState",
-		      payload: gameState
-		    }));
-
-		})
 	    }
 
 	    if (collision || (gameState.entities[entity_id].x === x && (gameState.entities[entity_id].x === x && gameState.entities[entity_id].y === y))) {
