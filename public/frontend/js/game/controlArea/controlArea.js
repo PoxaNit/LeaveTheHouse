@@ -3,14 +3,14 @@ import gameState from "../../game/state/gameState/gameState.js";
 import inputState from "../state/inputState/inputState.js";
 
 function bindEvent (b, direction) {
-alert("bindValue")
+
     b.ontouchstart = () => {
-	alert("touchstart");
+
 	inputState.walking.activeEvent = true;
 	inputState.walking[direction] = true;
     }
 
-    b.ontouchend = () => {alert("touchend");inputState.walking.activeEvent = false;}
+    b.ontouchend = () => {inputState.walking.activeEvent = false;}
 }
 
 function controlArea () {

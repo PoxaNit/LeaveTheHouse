@@ -1,5 +1,5 @@
 const {CollisionSystem} = require("../systems/collisionSystem/collisionSystem.ts");
-const {gameState} = require("../state/gameState/gameState.ts");
+const gameState = require("../state/gameState/gameState.ts").default;
 
 interface MoveEntity {
     entity_id: number;
@@ -8,11 +8,34 @@ interface MoveEntity {
 
 function moveEntity (payload: MoveEntity) {
 
-    const nextX = gameState.entities[entity_id].x + gameState.entities[entity_id].speed;
+    let nextX, nextY;
 
-    const nextY = gameState.entities[entity_id].y + gameState.entities[entity_id].speed;
+    switch (payload.direction) {
 
-    CollisionSystem.update(entity_id, nextX, nextY);
+	case "up":
+
+	    nextY = gameState.entities[payload.entity_id].y - gameState.entities[payload.entity_id].speed;
+	    break;
+
+	case "right":
+	    nextX = gameState.entities[payload.entity_id].x + gameState.entities[payload.entity_id].speed;
+	    break;
+
+	case "down":
+	    nextY = gameState.entities[payload.entity_id].y + gameState.entities[payload.entity_id].speed;
+	    break;
+
+	case "left":
+	    nextX = gameState.entities[payload.entity_id].x - gameState.entities[payload.entity_id].speed;
+	    break;
+
+	default:
+	    return [{scope: "private", data: {event: "event_error", payload: null}}];
+
+    }
+
+
+    CollisionSystem.update(payload.entity_id, nextX, nextY);
 
     return [
       {

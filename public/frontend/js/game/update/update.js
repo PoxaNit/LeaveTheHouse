@@ -6,7 +6,7 @@ function update () {
 
     if (inputState.touch.activeEvent) processTouch();
 
-    if (inputState.walking.activeEvent) {alert("walking is active");processWalking();}
+    if (inputState.walking.activeEvent) processWalking();
 
 }
 

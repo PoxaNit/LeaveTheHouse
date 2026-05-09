@@ -15,9 +15,9 @@ function sendData (direction) {
 }
 
 function processWalking () {
-alert("processWalking...")
+
     if (inputState.walking.up) {
-alert("walking.up is active")
+
 	sendData("up");
 
 	inputState.walking.up = false;
@@ -25,7 +25,6 @@ alert("walking.up is active")
     }
 
     if (inputState.walking.right) {
-alert("walking.right is active")
 
 	sendData("right");
 
@@ -34,7 +33,6 @@ alert("walking.right is active")
     }
 
     if (inputState.walking.down) {
-alert("walking.down is active")
 
 	sendData("down");
 
@@ -43,7 +41,6 @@ alert("walking.down is active")
     }
 
     if (inputState.walking.left) {
-alert("walking.left is active")
 
 	sendData("left");
 

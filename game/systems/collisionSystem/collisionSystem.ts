@@ -84,6 +84,8 @@ console.log("collision not detected!")
 
 		gameState.entities[entity_id] = futureEntitiesState[entity_id];
 
+		stop = true;
+
 	    }
 
 	    if (collision || (gameState.entities[entity_id].x === x && (gameState.entities[entity_id].x === x && gameState.entities[entity_id].y === y))) {
