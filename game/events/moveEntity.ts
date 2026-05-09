@@ -6,11 +6,6 @@ interface MoveEntity {
     direction: string;
 }
 
-function update (entity_id: number, x: number, y: number) {
-
-
-}
-
 function moveEntity (payload: MoveEntity) {
 
     const nextX = gameState.entities[entity_id].x + gameState.entities[entity_id].speed;

@@ -2,36 +2,15 @@ import ws from "../../ws/ws.js";
 import gameState from "../../game/state/gameState/gameState.js";
 import inputState from "../state/inputState/inputState.js";
 
-function bindEvent (b, eventName) {
-
+function bindEvent (b, direction) {
+alert("bindValue")
     b.ontouchstart = () => {
-
+	alert("touchstart");
 	inputState.walking.activeEvent = true;
-
-	if (eventName === "up") inputState.walking.up = true;
-
-	if (eventName === "right") inputState.walking.right = true;
-
-	if (eventName === "down") inputState.walking.down = true;
-
-	if (eventName === "left") inputState.walking.left = true;
-
+	inputState.walking[direction] = true;
     }
 
-    b.ontouchend = () => {
-
-	inputState.walking.activeEvent = false;
-
-	if (eventName === "up") inputState.walking.up = false;
-
-	if (eventName === "right") inputState.walking.right = false;
-
-	if (eventName === "down") inputState.walking.down = false;
-
-	if (eventName === "left") inputState.walking.left = false;
-
-    }
-
+    b.ontouchend = () => {alert("touchend");inputState.walking.activeEvent = false;}
 }
 
 function controlArea () {
@@ -49,16 +28,17 @@ function controlArea () {
     b4.textContent = "Left";
 
 
-    bindEvent(b1, "goUp");
-    bindEvent(b2, "goRight");
-    bindEvent(b3, "goDown");
-    bindEvent(b4, "goLeft");
+    bindEvent(b1, "up");
+    bindEvent(b2, "right");
+    bindEvent(b3, "down");
+    bindEvent(b4, "left");
 
 
     div.appendChild(b1);
     div.appendChild(b2);
     div.appendChild(b3);
     div.appendChild(b4);
+
 
     document.body.appendChild(div);
 
