@@ -20,7 +20,11 @@ function processWalking () {
 
 	sendData("up");
 
-	inputState.walking.up = false;
+	inputState.walking.right = false;
+
+	inputState.walking.down = false;
+
+	inputState.walking.left = false;
 
     }
 
@@ -28,7 +32,11 @@ function processWalking () {
 
 	sendData("right");
 
-	inputState.walking.right = false;
+	inputState.walking.up = false;
+
+	inputState.walking.down = false;
+
+	inputState.walking.left = false;
 
     }
 
@@ -36,7 +44,11 @@ function processWalking () {
 
 	sendData("down");
 
-	inputState.walking.down = false;
+	inputState.walking.up = false;
+
+	inputState.walking.right = false;
+
+	inputState.walking.left = false;
 
     }
 
@@ -44,7 +56,11 @@ function processWalking () {
 
 	sendData("left");
 
-	inputState.walking.left = false;
+	inputState.walking.up = false;
+
+	inputState.walking.right = false;
+
+	inputState.walking.down = false;
 
     }
 

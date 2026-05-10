@@ -10,7 +10,19 @@ function bindEvent (b, direction) {
 	inputState.walking[direction] = true;
     }
 
-    b.ontouchend = () => {inputState.walking.activeEvent = false;}
+    b.ontouchend = () => {
+
+	inputState.walking.activeEvent = false;
+
+	inputState.walking.up = false;
+
+	inputState.walking.right = false;
+
+	inputState.walking.down = false;
+
+	inputState.walking.left = false;
+
+    }
 }
 
 function controlArea () {
