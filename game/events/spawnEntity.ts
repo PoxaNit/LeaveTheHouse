@@ -1,3 +1,4 @@
+const {DynamicEntityInterface, DynamicEntity} = require("../entities/dynamicEntity/dynamicEntity.ts");
 const gameState = require("../state/gameState/gameState.ts").default;
 
 interface SpawnEntity {
@@ -11,6 +12,9 @@ interface SpawnEntity {
 function spawnEntity (payload: SpawnEntity) {
 
     const entity_id = Math.floor(Math.random() * (55000 - 1 + 1)) + 1;
+
+    const entity = new DynamicEntity();
+
 console.log("spanwEntity function, payload: ", payload)
     gameState.entities["" + entity_id] = {
       entity_id: entity_id,
