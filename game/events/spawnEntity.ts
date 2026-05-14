@@ -15,7 +15,6 @@ function spawnEntity (payload: SpawnEntity) {
 
     const entity = new DynamicEntity();
 
-console.log("spanwEntity function, payload: ", payload)
     gameState.entities["" + entity_id] = {
       entity_id: entity_id,
       x: payload.x,
@@ -24,7 +23,6 @@ console.log("spanwEntity function, payload: ", payload)
       height: payload.height,
       speed: payload.speed
     };
-console.log("spanwEntity function, gameState: ", gameState)
 
     return [
       {

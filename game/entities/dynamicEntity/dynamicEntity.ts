@@ -33,6 +33,10 @@ class DynamicEntity extends Entity {
       y: number
     ) {
 
+	super(
+	  x, y, width, height
+	);
+
 	this.speed = speed;
 
 	this.life = life;

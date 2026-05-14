@@ -6,13 +6,7 @@ interface TouchEnd {
 };
 
 function touchEnd (payload: TouchEnd) {
-/*
-    let futureGameState = gameState.entities;
 
-    futureGameState.entities["" + payload.entity_id] = payload;
-
-    CollisionSystem.update(futureGameState);
-*/
     return [
       {
 	scope: "public",

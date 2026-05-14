@@ -18,8 +18,7 @@ function touchMove (payload: TouchMove) {
       width: gameState.entities["" + payload.entity_id].width,
       height: gameState.entities["" + payload.entity_id].height
     };
-console.log("gameState entities: ", JSON.stringify(gameState.entities))
-console.log("futureEntitiesState entities: ", JSON.stringify(futureEntitiesState))
+
     CollisionSystem.update(futureEntitiesState);
 
     return [
