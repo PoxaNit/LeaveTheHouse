@@ -1,25 +1,36 @@
+const {TileRowInterface} = require("./tileRow.ts");
+
 interface TileInterface {
   id: number;
-  mapId: number;
+  mapRowId: number;
   size: number;
-  pixels: number[];
+  rows: TileRowInterface[];
+  walkable: boolean;
 }
 
 class Tile {
 
     id: number = Math.floor(Math.random() * 50000) + 1;
 
+    mapRowId: number = -1;
+
     mapId: number = -1;
 
-    size: number = 16;
+    size: number = 16; // 16x16
 
-    pixels: number[] = [];
+    rows: TileRowInterface[] = [];
 
-    constructor (mapId: number, size: number) {
+    walkable: boolean = true;
 
-	this.mapId = mapId;
+    constructor (mapRowId: number, size: number, rows: TileRowInterface[], walkable: boolean) {
+
+	this.mapRowId = mapRowId;
 
 	this.size = size;
+
+	this.rows = rows;
+
+	this.walkable = walkable;
 
     }
 
