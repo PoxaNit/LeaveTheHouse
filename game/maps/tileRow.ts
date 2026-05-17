@@ -3,7 +3,7 @@ const {TileColumnInterface} = require("./tileColumn.ts");
 interface TileRowInterface {
   id: number;
   tileId: number;
-  columns: TileColumnInterface[];
+  columns: TileColumnInterface[] | [];
 }
 
 class TileRow {

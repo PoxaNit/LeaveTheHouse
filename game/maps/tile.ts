@@ -4,7 +4,7 @@ interface TileInterface {
   id: number;
   mapRowId: number;
   size: number;
-  rows: TileRowInterface[];
+  rows: TileRowInterface[] | [];
   walkable: boolean;
 }
 

@@ -3,7 +3,7 @@ const {TileInterface} = require("./tile.ts");
 interface MapRowInterface {
   id: number;
   mapId: number;
-  tiles: TileInterface[];
+  tiles: TileInterface[] | [];
 }
 
 class MapRow {

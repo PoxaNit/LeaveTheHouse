@@ -6,7 +6,7 @@ interface MapInterface {
   tileSize: number;
   name: string;
   id: number;
-  rows: MapRowInterface[];
+  rows: MapRowInterface[] | [];
 }
 
 class Map {
