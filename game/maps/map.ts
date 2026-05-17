@@ -21,7 +21,7 @@ class Map {
 
     id: number =  Math.floor(Math.random() * 50000) + 1;
 
-    rows: MapRowInterface = [];
+    rows: MapRowInterface[] = [];
 
     constructor (width: number, height: number, tileSize: number, name: string, rows: MapRowInterface[]) {
 
