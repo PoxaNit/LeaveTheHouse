@@ -2,7 +2,7 @@ const {MapInterface} = require("../../maps/map.ts");
 
 interface GameState {
   entities: object;
-  mapData: MapInterface[] | [];
+  mapData: MapInterface;
 }
 
 let gameState: GameState = {

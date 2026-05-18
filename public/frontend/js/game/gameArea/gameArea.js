@@ -1,9 +1,10 @@
+import gameState from "../state/gameState/gameState.js";
 
 const gameArea = {
   canvas: document.createElement("canvas"),
   start: function () {
-    this.canvas.width = 480;
-    this.canvas.height = 270;
+    this.canvas.width = (gameState?.mapData?.width * gameState?.mapData?.tileSize) ?? 0;
+    this.canvas.height = (gameState?.mapData?.height * gameState?.mapData?.tileSize) ?? 0;
     this.context = this.canvas.getContext("2d");
     document.body.insertBefore(this.canvas, document.body.childNodes[0]);
   }
