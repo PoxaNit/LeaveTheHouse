@@ -1,6 +1,7 @@
 const gameState = {
   thisPlayerId: null,
-  entities: {}
+  entities: {},
+  mapData: {}
 };
 
 export default gameState;

@@ -7,7 +7,7 @@ function entitiesProcessor() {
 
 const canvas = gameArea.canvas;
 const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-console.log("imageData.data: ", imageData.data)
+console.log("imageData.data: ", JSON.stringify(imageData.data))
     for (const id in gameState.entities) {
 
 	const entity = gameState.entities[id];
