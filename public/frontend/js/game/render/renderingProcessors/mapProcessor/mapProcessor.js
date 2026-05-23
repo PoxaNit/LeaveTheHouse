@@ -15,39 +15,28 @@ function mapProcessor () {
 
     const imageData = gameArea.canvas.getImageData(0, 0, canvas.width, canvas.height);
 
-    const data = imageData.data;
+    let data = imageData.data;
 
     let n = 0; // imageData data index
 
-    const rows = gameState.mapData.rows;
+    const mapData = gameState.mapData.data;
 
-    for (let i = 0; i < rows.length; i++) {
+    for (let i = 0; i < mapData.length; i++) {
 
-	for (let j = 0; j < rows[i].tiles.length; j++) {
+	for (let j = 0; j < mapData[i].length; j++) {
 
-	    for (let k = 0; k < rows[i].tiles[j].rows.length) {
+	    data[n] = mapData[i][j];
+	    data[n + 1] = mapData[i][j + 1];
+	    data[n + 2] = mapData[i][j + 2];
+	    data[n + 3] = mapData[i][j + 3];
 
-		for (let z = 0; z < rows[i].tiles[j].rows[k].columns) {
-
-		    const column = rows[i].tiles[j].rows[k].columns[z]
-
-		    const rgb = hexToRgb(column.color);
-
-		    data[n] = rgb[0];
-
-		    data[n + 1] = rgb[1];
-
-		    data[n + 2] = rgb[2];
-
-		    n += 4;
-
-		}
-
-	    }
+	    n += 4;
 
 	}
 
     }
+
+    canvas.getContext("2d").putImageData(data);
 
 }
 

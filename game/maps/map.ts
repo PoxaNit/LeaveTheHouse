@@ -1,12 +1,10 @@
-const {MapRowInterface} = require("./mapRow.ts");
-
 interface MapInterface {
   width: number;
   height: number;
   tileSize: number;
   name: string;
   id: number;
-  rows: MapRowInterface[] | [];
+  data: []; // pixels
 }
 
 class Map {
@@ -21,9 +19,9 @@ class Map {
 
     id: number =  Math.floor(Math.random() * 50000) + 1;
 
-    rows: MapRowInterface[] = [];
+    data: MapRowInterface[] = [];
 
-    constructor (width: number, height: number, tileSize: number, name: string, rows: MapRowInterface[]) {
+    constructor (width: number, height: number, tileSize: number, name: string, data: object) {
 
 	this.width = width;
 
@@ -33,7 +31,7 @@ class Map {
 
 	this.name = name;
 
-	this.rows = rows;
+	this.data = data;
 
     }
 
