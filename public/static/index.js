@@ -42,6 +42,11 @@ console.log(`index.js, x y: ${clientX} ${clientY}`)
 */
 
     ws.send(JSON.stringify({
+      event: "createMap",
+      payload: null
+    }));
+
+    ws.send(JSON.stringify({
       event: "spawnEntity",
        payload: {
         x: 50,

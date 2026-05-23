@@ -1,8 +1,5 @@
-const mapData = require("./mapData.json");
-const {MapInterface, Map} = require("./map.ts");
+const gameState = require("../state/gameState/gameState.ts").default;
+const {mapData} = require("./mapData.ts");
 
-const gameState = {
-  mapData: mapData  
-}
-
-const map1: MapInterface = new Map();
+gameState.mapData = mapData;
+console.log("mapData: ", mapData)

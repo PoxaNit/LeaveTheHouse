@@ -7,7 +7,7 @@ interface GameState {
 
 let gameState: GameState = {
   entities: {},
-  mapData: [] // array of rows (rows of tiles)
+  mapData: {}
 };
 
 export default gameState;

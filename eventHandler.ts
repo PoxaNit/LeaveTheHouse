@@ -4,10 +4,11 @@ const despawnEntity = require("./game/events/despawnEntity.ts").default;
 const touchStart = require("./game/events/touchStart.ts").default;
 const touchMove = require("./game/events/touchMove.ts").default;
 const touchEnd = require("./game/events/touchEnd.ts").default;
+const createMap = require("./game/events/createMap.ts").default;
 
 interface Message {
     event: string;
-    payload: object
+    payload: object | null
 }
 
 function eventHandler (message: Message) {
@@ -42,6 +43,9 @@ function eventHandler (message: Message) {
 	case "touchend":
 	    return touchEnd(payload);
 	    break;
+
+	case "createMap":
+	    return createMap();
 
 
 	default:
