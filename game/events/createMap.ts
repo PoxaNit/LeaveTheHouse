@@ -1,4 +1,4 @@
-const gameState = require("../state/gameState/gameState.ts");
+const gameState = require("../state/gameState/gameState.ts").default;
 
 function createMap () {
 

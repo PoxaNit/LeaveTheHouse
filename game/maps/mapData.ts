@@ -23,4 +23,4 @@ const mapData = {
   ]
 }
 
-export {mapData};
+export default mapData;

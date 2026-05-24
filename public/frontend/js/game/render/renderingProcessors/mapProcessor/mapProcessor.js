@@ -14,8 +14,7 @@ function mapProcessor () {
     let n = 0; // imageData data index
 
     const mapData = gameState.mapData.data;
-setTimeout(() => console.log("mapData: ", mapData), 5000)
-/*
+
     for (let i = 0; i < mapData.length; i++) {
 
 	for (let j = 0; j < mapData[i].length; j++) {
@@ -31,8 +30,8 @@ setTimeout(() => console.log("mapData: ", mapData), 5000)
 
     }
 
-//    context.putImageData(data);
-*/
+    context.putImageData(data);
+
 }
 
 export default mapProcessor;
