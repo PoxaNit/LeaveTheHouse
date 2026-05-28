@@ -2,7 +2,7 @@ import gameState from "../../../state/gameState/gameState.js";
 import {gameArea} from "../../../gameArea/gameArea.js";
 
 function mapProcessor () {
-
+const gs = gameState;
     const canvas = gameArea.canvas;
 
     const ctx = gameArea.context;
@@ -13,16 +13,16 @@ function mapProcessor () {
 
     let n = 0; // imageData data index
 
-    const mapData = gameState.mapData.data;
+    const mapData = {...gs};
 
 setTimeout(() => {
-  console.log("gameState: ", gameState)
-  console.log("gameState.mapData: ", gameState.mapData)
-  console.log("gameState.mapData.data: ", gameState.mapData.data)
+  console.log("gs: ", gs)
+  console.log("gs.mapData: ", gs.mapData)
+  console.log("gs.mapData.data: ", gs.mapData.data)
   console.log("mapData: ", mapData)
 }, 5000)
 
-/*
+
     for (let i = 0; i < mapData.length; i++) {
 
 	for (let j = 0; j < mapData[i].length; j += 4) {
@@ -37,8 +37,8 @@ setTimeout(() => console.log("mapData[i][j]: ", mapData[i][j]), 5000)
 	}
 
     }
-*/
-    context.putImageData(data);
+
+    context.putImageData(imageData, 0, 0);
 
 }
 
