@@ -15,10 +15,18 @@ function mapProcessor () {
 
     const mapData = gameState.mapData.data;
 
+setTimeout(() => {
+  console.log("gameState: ", gameState)
+  console.log("gameState.mapData: ", gameState.mapData)
+  console.log("gameState.mapData.data: ", gameState.mapData.data)
+  console.log("mapData: ", mapData)
+}, 5000)
+
+/*
     for (let i = 0; i < mapData.length; i++) {
 
-	for (let j = 0; j < mapData[i].length; j++) {
-
+	for (let j = 0; j < mapData[i].length; j += 4) {
+setTimeout(() => console.log("mapData[i][j]: ", mapData[i][j]), 5000)
 	    data[n] = mapData[i][j];
 	    data[n + 1] = mapData[i][j + 1];
 	    data[n + 2] = mapData[i][j + 2];
@@ -29,7 +37,7 @@ function mapProcessor () {
 	}
 
     }
-
+*/
     context.putImageData(data);
 
 }
