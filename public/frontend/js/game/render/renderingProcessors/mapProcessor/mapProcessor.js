@@ -12,21 +12,24 @@ const gs = gameState;
     let data = imageData.data;
 
     let n = 0; // imageData data index
+//console.log("before return")
 
-    const mapData = {...gs};
-
+    if (!gs.mapData?.data?.length) return;
+//console.log("after return")
+    const mapData = [...gs.mapData.data];
+/*
 setTimeout(() => {
   console.log("gs: ", gs)
   console.log("gs.mapData: ", gs.mapData)
   console.log("gs.mapData.data: ", gs.mapData.data)
   console.log("mapData: ", mapData)
 }, 5000)
-
+*/
 
     for (let i = 0; i < mapData.length; i++) {
 
 	for (let j = 0; j < mapData[i].length; j += 4) {
-setTimeout(() => console.log("mapData[i][j]: ", mapData[i][j]), 5000)
+//setTimeout(() => console.log("mapData[i][j]: ", mapData[i][j]), 5000)
 	    data[n] = mapData[i][j];
 	    data[n + 1] = mapData[i][j + 1];
 	    data[n + 2] = mapData[i][j + 2];
@@ -37,8 +40,8 @@ setTimeout(() => console.log("mapData[i][j]: ", mapData[i][j]), 5000)
 	}
 
     }
-
-    context.putImageData(imageData, 0, 0);
+console.log("imageData: ", imageData)
+//    context.putImageData(imageData, 0, 0);
 
 }
 
