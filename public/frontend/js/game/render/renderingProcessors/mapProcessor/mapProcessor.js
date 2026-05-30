@@ -40,8 +40,8 @@ setTimeout(() => {
 	}
 
     }
-console.log("imageData: ", imageData)
-//    context.putImageData(imageData, 0, 0);
+console.log("imageData.data: ", {...imageData.data})
+    context.putImageData(imageData, 0, 0);
 
 }
 
