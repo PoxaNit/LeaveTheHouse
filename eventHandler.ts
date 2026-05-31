@@ -5,6 +5,7 @@ const touchStart = require("./game/events/touchStart.ts").default;
 const touchMove = require("./game/events/touchMove.ts").default;
 const touchEnd = require("./game/events/touchEnd.ts").default;
 const createMap = require("./game/events/createMap.ts").default;
+const showLog = require("./game/events/showLog.ts").default;
 
 interface Message {
     event: string;
@@ -13,8 +14,8 @@ interface Message {
 
 function eventHandler (message: Message) {
 
-    console.log(`event: ${message.event}`);
-    console.log('payload: ', message.payload);
+//    console.log(`event: ${message.event}`);
+//    console.log('payload: ', message.payload);
 
     const payload = message.payload;
 
@@ -46,6 +47,9 @@ function eventHandler (message: Message) {
 
 	case "createMap":
 	    return createMap();
+
+	case "showLog":
+	    return showLog(payload);
 
 
 	default:

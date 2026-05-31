@@ -1,5 +1,6 @@
 import gameState from "../../../state/gameState/gameState.js";
 import {gameArea} from "../../../gameArea/gameArea.js";
+import ws from "../../../../ws/ws.js";
 
 function mapProcessor () {
 const gs = gameState;
@@ -8,12 +9,12 @@ const gs = gameState;
     const ctx = gameArea.context;
 
     const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-
+/*
     let data = imageData.data;
 
     let n = 0; // imageData data index
 //console.log("before return")
-
+*/
     if (!gs.mapData?.data?.length) return;
 //console.log("after return")
     const mapData = [...gs.mapData.data];
@@ -25,22 +26,34 @@ setTimeout(() => {
   console.log("mapData: ", mapData)
 }, 5000)
 */
-
+/*
     for (let i = 0; i < mapData.length; i++) {
 
 	for (let j = 0; j < mapData[i].length; j += 4) {
-//setTimeout(() => console.log("mapData[i][j]: ", mapData[i][j]), 5000)
+setTimeout(() => console.log("mapData[i][j]: ", mapData[i][j]), 5000)
 	    data[n] = mapData[i][j];
 	    data[n + 1] = mapData[i][j + 1];
 	    data[n + 2] = mapData[i][j + 2];
 	    data[n + 3] = mapData[i][j + 3];
 
 	    n += 4;
+setTimeout(() => console.log("data[n]: ", data[n]), 5000)
 
 	}
 
     }
-console.log("imageData.data: ", {...imageData.data})
+*/
+
+    imageData.data.set(mapData);
+
+    ws.send(JSON.stringify({
+      event: "showLog",
+      payload: {
+        playerId: gameState.thisPlayerId,
+	data: imageData.data
+      }
+    }));
+
     context.putImageData(imageData, 0, 0);
 
 }

@@ -56,7 +56,7 @@ wss.on("connection", ws => {
 
     ws.on("message", data => {
 
-        console.log("message: " + data);
+//        console.log("message: " + data);
 
 	const messages = eventHandler(JSON.parse(data));
 
