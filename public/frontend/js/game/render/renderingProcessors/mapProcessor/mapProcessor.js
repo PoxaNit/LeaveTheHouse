@@ -29,7 +29,7 @@ setTimeout(() => {
 
     for (let i = 0; i < mapData.length; i++) {
 
-	for (let j = 0; j < mapData[i].length; j += 4) {
+	for (let j = 0; j < mapData[i].length / 4; j += 4) {
 //setTimeout(() => console.log("mapData[i][j]: ", mapData[i][j]), 5000)
 	    data[n] = mapData[i][j];
 	    data[n + 1] = mapData[i][j + 1];

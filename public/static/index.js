@@ -49,10 +49,10 @@ console.log(`index.js, x y: ${clientX} ${clientY}`)
     ws.send(JSON.stringify({
       event: "spawnEntity",
        payload: {
-        x: 50,
-        y: 50,
-	width: 30,
-	height: 40,
+        x: 2,
+        y: 5,
+	width: 4,
+	height: 4,
 	speed: 5
       }
     }));
