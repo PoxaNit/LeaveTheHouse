@@ -69,7 +69,7 @@ wss.on("connection", ws => {
 	    }
 
 	     if (message.scope === "public") {
-console.log("public message: ", JSON.stringify(message.data))
+//console.log("public message: ", JSON.stringify(message.data))
 	         wss.clients.forEach(client => {
 
 	            client.send(JSON.stringify(message.data));
