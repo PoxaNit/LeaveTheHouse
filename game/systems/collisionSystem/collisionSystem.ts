@@ -10,17 +10,22 @@ type Entities = DynamicEntity[];
 
 export class CollisionSystem {
 
-    static detectCollisions (entities: DynamicEntity[]) {
+    static detectCollisions (thisEntity, entities: DynamicEntity[]) {
 
 	for (let i = 0; i < entities.length; i++) {
 
 	    for (let j = 0; j < entities.length; j++) {
 
 		if (
-		    entities[i][1].x > entities[j][1].x &&
+		    (entities[i][1].x > entities[j][1].x &&
 		    entities[i][1].x < entities[j][1].x + entities[j][1].width &&
 		    entities[i][1].y > entities[j][1].y &&
-		    entities[i][1].y < entities[j][1].y + entities[j][1].height
+		    entities[i][1].y < entities[j][1].y + entities[j][1].height) ||
+		    (entities[i][0].x >= 0 ||
+		    entities[i][0].y >= 0 ||
+		    entities[i][0].x + entities[i][0].width <= gameState.mapData.width ||
+		    entities[i][0].y + entities[i][0].height <= gameState.mapData.height
+		    )
 		) {
 
 		    return true; // Collision
@@ -65,7 +70,9 @@ export class CollisionSystem {
 
 	    }
 
-	    const collision = this.detectCollisions(futureEntitiesState);
+	    const thisEntity = futureEntitiesState[entity_id];
+
+	    const collision = this.detectCollisions(thisEntity, futureEntitiesState);
 
 	    if (!collision) {
 
